@@ -4,7 +4,7 @@ import java.util.*;
 
 public class EvenNumbersLinkedList {
            //    Creating evenNumberArrayList to store Even numbers
-        static List<Integer> evenNumberArrayList = new LinkedList<>();
+        static List<Integer> evenNumberLinkedList = new LinkedList<>();
         //    Creating multipleWithTwo array to store Multiple of evenNumber array
         static List<Integer> multipleWithTwo = new LinkedList<>();
         static boolean flag = false;
@@ -16,7 +16,7 @@ public class EvenNumbersLinkedList {
             int numberToGetEvenNumbers = input.nextInt();
             saveEvenNumbers(numberToGetEvenNumbers);
             printEvenNumbers();
-            System.out.println("Enter the number to search in Array");
+            System.out.println("Enter the number to search in LinkedList");
             int searchElement = input.nextInt();
             try {
                 int searchResult = printEvenNumber(searchElement);
@@ -32,8 +32,8 @@ public class EvenNumbersLinkedList {
         private static int printEvenNumber(int searchElement) {
 //        Comparing each element in the array with given element
 
-            for (int i = 0; i < evenNumberArrayList.size(); i++ ) {
-                if(evenNumberArrayList.get(i) == searchElement){
+            for (int i = 0; i < evenNumberLinkedList.size(); i++ ) {
+                if(evenNumberLinkedList.get(i) == searchElement){
                     flag = true;
                     System.out.println("Element found ");
                 }
@@ -48,8 +48,8 @@ public class EvenNumbersLinkedList {
 //    Method to multiply each element in evenNumberArray with number 2 and stores in another array called multipleWithTwo
 
         public static List<Integer> printEvenNumbers() {
-            for(int i = 0 ; i < evenNumberArrayList.size(); i++) {
-                multipleWithTwo.add(evenNumberArrayList.get(i) * 2);
+            for(int i = 0 ; i < evenNumberLinkedList.size(); i++) {
+                multipleWithTwo.add(evenNumberLinkedList.get(i) * 2);
             }
             System.out.println("Array after multiply with 2 is:" + multipleWithTwo);
             return multipleWithTwo;
@@ -60,10 +60,10 @@ public class EvenNumbersLinkedList {
         public static List<Integer> saveEvenNumbers(int n) {
             for (int i = 2; i <= n; i++) {
                 if (i % 2 == 0)
-                    evenNumberArrayList.add(i);
+                    evenNumberLinkedList.add(i);
             }
-            System.out.println("Even number between 2 and given number :" + evenNumberArrayList);
-            return evenNumberArrayList;
+            System.out.println("Even number between 2 and given number :" + evenNumberLinkedList);
+            return evenNumberLinkedList;
         }
 }
 
