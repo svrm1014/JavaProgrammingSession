@@ -2,11 +2,11 @@ package com.techpro.javapractice;
 
 import java.util.*;
 
-public class EvenNumbersLinkedList {
-    //    Creating evenNumberLinkedList to store Even numbers
-    static List<Integer> evenNumberLinkedList = new LinkedList<>();
-    //    Creating multipleWithTwo linkedlist to store Multiple of evenNumber array
-    static List<Integer> multipleWithTwo = new LinkedList<>();
+public class EvenNumbersVector {
+//        Creating evenNumbeerVector to store Even numbers
+    static List<Integer> evenNumberVector = new Vector<>();
+//        Creating multipleWithTwo vector to store Multiple of evenNumber vector
+    static List<Integer> multipleWithTwo = new Vector<>();
     static boolean flag = false;
 
     public static void main(String[] args) {
@@ -15,24 +15,25 @@ public class EvenNumbersLinkedList {
         int numberToGetEvenNumbers = input.nextInt();
         saveEvenNumbers(numberToGetEvenNumbers);
         printEvenNumbers();
-        System.out.println("Enter the number to search in LinkedList");
+        System.out.println("Enter the number to search in Vector");
         int searchElement = input.nextInt();
         try {
             int searchResult = printEvenNumber(searchElement);
             System.out.println(searchResult);
         } catch (Exception e) {
+            System.out.println("Invalid Input");
             System.out.println(e);
         }
     }
 
-    /* Method to search the given element in evenNumbersLinkedlist
-     *And returns the element if found else return zero(0) */
+//     Method to search the given element in evenNumberVector
+//     *And returns the element if found else return zero(0)
 
     private static int printEvenNumber(int searchElement) {
-//        Comparing each element in the linkedlist with given element
+//        Comparing each element in the vector with given element
 
-        for (int i = 0; i < evenNumberLinkedList.size(); i++) {
-            if (evenNumberLinkedList.get(i) == searchElement) {
+        for (int i = 0; i < evenNumberVector.size(); i++) {
+            if (evenNumberVector.get(i) == searchElement) {
                 flag = true;
                 System.out.println("Element found ");
             }
@@ -44,13 +45,13 @@ public class EvenNumbersLinkedList {
         }
     }
 
-//    Method to multiply each element in evenNumberLinkedlist with number 2 and stores in another linkedlist called multipleWithTwo
+//    Method to multiply each element in evenNumberVector with number 2 and stores in another vector called multipleWithTwo
 
     public static List<Integer> printEvenNumbers() {
-        for (int i = 0; i < evenNumberLinkedList.size(); i++) {
-            multipleWithTwo.add(evenNumberLinkedList.get(i) * 2);
+        for (int i = 0; i < evenNumberVector.size(); i++) {
+            multipleWithTwo.add(evenNumberVector.get(i) * 2);
         }
-        System.out.println("Array after multiply with 2 is:" + multipleWithTwo);
+        System.out.println("Vector after multiply with 2 is:" + multipleWithTwo);
         return multipleWithTwo;
     }
 
@@ -59,10 +60,9 @@ public class EvenNumbersLinkedList {
     public static List<Integer> saveEvenNumbers(int n) {
         for (int i = 2; i <= n; i++) {
             if (i % 2 == 0)
-                evenNumberLinkedList.add(i);
+                evenNumberVector.add(i);
         }
-        System.out.println("Even number between 2 and given number :" + evenNumberLinkedList);
-        return evenNumberLinkedList;
+        System.out.println("Even number between 2 and given number :" + evenNumberVector);
+        return evenNumberVector;
     }
 }
-

@@ -7,13 +7,18 @@ GetEmployeeDetails() -> prints employee details
 */
 
 public class Employee {
+//Declaration of Employee variable to store employee details
     private int empId;
     private String empName;
     private String empEmail;
     private char empGender;
     private float empSalary;
-    public Employee(){
+
+//    Employee constructor
+    public Employee() {
     }
+
+//    Employee Constructor with parameters
     public Employee(int empId,String empName,String empEmail,char empGender,float empSalary) {
         this.empId = empId;
         this.empName = empName;
@@ -22,6 +27,8 @@ public class Employee {
         this.empSalary = empSalary;
 
     }
+
+//    Getter and setter methods to access the employee details
 
     public int getEmpId() {
         return empId;
@@ -40,7 +47,6 @@ public class Employee {
     }
 
     public String getEmpEmail() {
-
         return empEmail;
     }
 
@@ -69,10 +75,13 @@ public class Employee {
         this.empSalary = empSalary;
     }
 
+//    Method to get employee details
     public String getEmployeeDetails() {
         return "Employee ID:" + empId + "EmployeeName:" + empName + "EmployeeEmail:" + empEmail +
                 "EmployeeGender:" + empGender + "EmployeeSalary:" + empSalary;
     }
+
+//    toString Method to return employee object
     public String toString() {
         return "Employee ID:" + empId + ", EmployeeName:" + empName + ", EmployeeEmail:" + empEmail +
                 ", EmployeeGender:" + empGender + ", EmployeeSalary:" + empSalary;
